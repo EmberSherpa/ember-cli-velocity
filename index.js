@@ -16,6 +16,13 @@ module.exports = {
       addon = unwatchedTree(treePath);
     }
 
+    if (typeof addon === 'undefined') {
+      treePath = path.join(__dirname, 'node_modules');
+      if (fs.existsSync(treePath)) {
+        addon = unwatchedTree(treePath);
+      }
+    }
+
     return addon;
   },
   included: function included(app) {
