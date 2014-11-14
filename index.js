@@ -1,29 +1,33 @@
 'use strict';
-/* global require, module */
-var path = require('path');
-var fs   = require('fs');
+/* global require, module, __dirname */
+var path        = require('path');
+var fs          = require('fs');
+var mergeTrees  = require('broccoli-merge-trees');
+var pickFiles   = require('broccoli-static-compiler');
 
 module.exports = {
   name: 'ember-cli-velocity',
-  treeFor: function treeFor(name) {
+  treeFor: function treeFor( name ) {
     if (name !== 'vendor') { return; }
 
     var treePath = path.join('node_modules', 'ember-cli-velocity', 'node_modules');
 
-    var addon;
+    var tree;
 
     if (fs.existsSync(treePath)) {
-      addon = unwatchedTree(treePath);
+      tree = unwatchedTree(treePath);
     }
 
-    if (typeof addon === 'undefined') {
+    if (typeof tree === 'undefined') {
       treePath = path.join(__dirname, 'node_modules');
       if (fs.existsSync(treePath)) {
-        addon = unwatchedTree(treePath);
+        tree = unwatchedTree(treePath);
       }
     }
 
-    return addon;
+    var vendor = unwatchedTree(path.join(__dirname, 'vendor'));
+
+    return mergeTrees([tree, vendor]);
   },
   included: function included(app) {
     this.app = app;
@@ -35,7 +39,7 @@ module.exports = {
     if (options.ui) {
       this.app.import('vendor/velocity-animate/velocity.ui.js');
     }
-    this.app.import('vendor/velocity-promise-shim.js');
+    this.app.import('vendor/ember-cli-velocity/velocity-promise-shim.js');
   }
 };
 

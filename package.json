@@ -35,6 +35,8 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-static-compiler": "^0.2.1",
     "velocity-animate": "^1.1.0"
   }
 }
