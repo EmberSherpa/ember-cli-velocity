@@ -1,5 +1,5 @@
 'use strict';
-
+/* global require, module */
 var path = require('path');
 var fs   = require('fs');
 
@@ -35,6 +35,7 @@ module.exports = {
     if (options.ui) {
       this.app.import('vendor/velocity-animate/velocity.ui.js');
     }
+    this.app.import('vendor/velocity-promise-shim.js');
   }
 };
 
