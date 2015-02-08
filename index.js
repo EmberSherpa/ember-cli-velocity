@@ -4,14 +4,14 @@ var path        = require('path');
 
 module.exports = {
   name: 'ember-cli-velocity',
-  treeForVendor: function treeForVendor( name ) {
+  treeForVendor: function treeForVendor() {
     var unwatchedTree = require('broccoli-unwatched-tree');
     var js = this.pickFiles(unwatchedTree(path.join(__dirname, 'node_modules', 'velocity-animate')), {
       srcDir: '/',
       files: ['*.js'],
       destDir: 'velocity-animate'
     });
-    return log(js);
+    return js;
   },
   included: function included(app) {
     this.app = app;

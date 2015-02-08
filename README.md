@@ -2,7 +2,9 @@
 
 Adds Velocity.js to application's vendor directory and imports Velocity for use in application.
 
-Installation: `npm install --save ember-cli-velocity`
+## Installation: 
+
+`npm install --save ember-cli-velocity`
 
 ## Development
 
