@@ -36,7 +36,7 @@
     "glob": "^4.0.5"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon", "velocity", "animation", "jquery", "animate", "ui", "velocity.js", "velocityjs", "javascript"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"
