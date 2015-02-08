@@ -1,8 +1,10 @@
-# Ember-cli-velocity
+# ember-cli-velocity [![Build Status](https://travis-ci.org/taras/ember-cli-velocity.svg)](https://travis-ci.org/taras/ember-cli-velocity)
 
-This README outlines the details of collaborating on this Ember addon.
+Adds Velocity.js to application's vendor directory and imports Velocity for use in application.
 
-## Installation
+Installation: `npm install --save ember-cli-velocity`
+
+## Development
 
 * `git clone` this repository
 * `npm install`
