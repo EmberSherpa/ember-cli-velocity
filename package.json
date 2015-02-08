@@ -1,6 +1,7 @@
 {
   "name": "ember-cli-velocity",
   "version": "0.2.1",
+  "description": "Adds Velocity.js to the project.",
   "directories": {
     "doc": "doc",
     "test": "test"
