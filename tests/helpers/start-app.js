@@ -3,7 +3,7 @@ import Application from '../../app';
 import Router from '../../router';
 import config from '../../config/environment';
 
-export default function startApp(attrs) {
+function startApp(attrs) {
   var App;
 
   var attributes = Ember.merge({}, config.APP);
@@ -23,3 +23,5 @@ export default function startApp(attrs) {
 
   return App;
 }
+
+export default startApp;
