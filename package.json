@@ -21,7 +21,6 @@
     "broccoli-asset-rev": "^2.0.0",
     "broccoli-merge-trees": "^0.2.1",
     "broccoli-static-compiler": "^0.2.1",
-    "broccoli-unwatched-tree": "^0.1.1",
     "ember-cli": "0.1.2",
     "ember-cli-6to5": "^3.0.0",
     "ember-cli-app-version": "0.3.1",
@@ -42,6 +41,7 @@
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
-    "velocity-animate": "^1.2.1"
+    "velocity-animate": "^1.2.1",
+    "broccoli-unwatched-tree": "^0.1.1"
   }
 }
