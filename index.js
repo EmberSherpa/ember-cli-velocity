@@ -1,7 +1,6 @@
 'use strict';
 /* global require, module, __dirname */
 var path        = require('path');
-var util        = require('util');
 
 module.exports = {
   name: 'ember-cli-velocity',
