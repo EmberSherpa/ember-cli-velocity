@@ -35,13 +35,23 @@
     "glob": "^4.0.5"
   },
   "keywords": [
-    "ember-addon", "velocity", "animation", "jquery", "animate", "ui", "velocity.js", "velocityjs", "javascript"
+    "ember-addon",
+    "velocity",
+    "animation",
+    "jquery",
+    "animate",
+    "ui",
+    "velocity.js",
+    "velocityjs",
+    "javascript"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
   "dependencies": {
-    "velocity-animate": "^1.2.1",
-    "broccoli-unwatched-tree": "^0.1.1"
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-static-compiler": "^0.2.1",
+    "broccoli-unwatched-tree": "^0.1.1",
+    "velocity-animate": "^1.2.1"
   }
 }
