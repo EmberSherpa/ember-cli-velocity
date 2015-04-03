@@ -16,8 +16,8 @@ module.exports = {
     });
     return mergeTrees([emberCliVelocity, velocityAnimate]);
   },
-  included: function included(config) {
-    this.app = config.app;
+  included: function included(app) {
+    this.app = app;
     var options = this.app.options.velocityOptions || {enabled: true, ui: false};
 
     if (options.enabled == false) {
