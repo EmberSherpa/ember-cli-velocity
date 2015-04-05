@@ -16,19 +16,29 @@ module.exports = {
     });
     return mergeTrees([emberCliVelocity, velocityAnimate]);
   },
+  velocityOptions: function () {
+    var env  = process.env.EMBER_ENV;
+    return this.project.config(env).velocityOptions || {enabled: true, ui: false};
+  },
   included: function included(app) {
-    this.app = app;
-    var options = this.app.options.velocityOptions || {enabled: true, ui: false};
+    this._super.included.apply(this, arguments);
+    
+    var emberCLIVersion = app.project.emberCLIVersion();
+    if (emberCLIVersion < '0.0.41') {
+      throw new Error('ember-cli-velocity requires ember-cli version 0.0.41 or greater.\n');
+    }
+
+    var options = this.velocityOptions();
 
     if (options.enabled == false) {
       return;
     }
 
-    this.app.import('vendor/velocity-animate/velocity.js');
+    app.import('vendor/velocity-animate/velocity.js');
     if (options.ui) {
-      this.app.import('vendor/velocity-animate/velocity.ui.js');
+      app.import('vendor/velocity-animate/velocity.ui.js');
     }
-    this.app.import('vendor/ember-cli-velocity/velocity-promise-shim.js');
+    app.import('vendor/ember-cli-velocity/velocity-promise-shim.js');
 
   }
 };
