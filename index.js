@@ -6,13 +6,15 @@ module.exports = {
   name: 'ember-cli-velocity',
   treeForVendor: function treeForVendor() {
     var unwatchedTree = require('broccoli-unwatched-tree');
+    var mergeTrees = require('broccoli-merge-trees');
+    var pickFiles = require('broccoli-static-compiler');
     var emberCliVelocity = unwatchedTree(path.join(__dirname, 'vendor'));
-    var velocityAnimate = this.pickFiles(unwatchedTree(path.join(__dirname, 'node_modules', 'velocity-animate')), {
+    var velocityAnimate = pickFiles(unwatchedTree(path.join(__dirname, 'node_modules', 'velocity-animate')), {
       srcDir: '/',
       files: ['*.js'],
       destDir: 'velocity-animate'
     });
-    return this.mergeTrees([emberCliVelocity, velocityAnimate]);
+    return mergeTrees([emberCliVelocity, velocityAnimate]);
   },
   included: function included(app) {
     this.app = app;
