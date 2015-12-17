@@ -9,7 +9,7 @@ module.exports = {
     var mergeTrees = require('broccoli-merge-trees');
     var pickFiles = require('broccoli-static-compiler');
     var emberCliVelocity = unwatchedTree(path.join(__dirname, 'vendor'));
-    var velocityAnimate = pickFiles(unwatchedTree(path.join(__dirname, 'node_modules', 'velocity-animate')), {
+    var velocityAnimate = pickFiles(unwatchedTree(require.resolve('velocity-animate').replace('velocity.js', '')), {
       srcDir: '/',
       files: ['*.js'],
       destDir: 'velocity-animate'
@@ -22,7 +22,7 @@ module.exports = {
   },
   included: function included(app) {
     this._super.included.apply(this, arguments);
-    
+
     var emberCLIVersion = app.project.emberCLIVersion();
     if (emberCLIVersion < '0.0.41') {
       throw new Error('ember-cli-velocity requires ember-cli version 0.0.41 or greater.\n');
