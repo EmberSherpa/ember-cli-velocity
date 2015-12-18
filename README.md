@@ -9,16 +9,19 @@ This addon shims Promise with Ember.RSVP.Promise if the browser doesn't have nat
 
 ## Configuration
 
-You can activate UI pack in your project's `Brocfile.js`.
+You can activate UI pack in your project's `environment.js` under `app/config`.
 
 ```
-var app = new EmberApp({
-  velocityOptions: {
-    enabled: true, # enabled the addon (default: true)
-    ui: false # add Velocity UI Pack (default: false)
+module.exports = function(environment) {
+  var ENV = {
+  	[...]
+    velocityOptions: {
+      enabled: true, // enabled the addon (default: true)
+      ui: false // add Velocity UI Pack (default: false)
+    }
+    [...]
   }
-});
-return app;
+}
 ```
 
 ## Development
