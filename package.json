@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-velocity",
   "version": "0.3.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "EmberCLI Addon wrapper for Velocity.js",
   "directories": {
     "doc": "doc",
     "test": "tests"
