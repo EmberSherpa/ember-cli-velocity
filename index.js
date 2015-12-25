@@ -1,9 +1,10 @@
 'use strict';
-/* global require, module, __dirname */
-var path        = require('path');
+/* global process, require, module, __dirname */
+var path = require('path');
 
 module.exports = {
   name: 'ember-cli-velocity',
+
   treeForVendor: function treeForVendor() {
     var unwatchedTree = require('broccoli-unwatched-tree');
     var mergeTrees = require('broccoli-merge-trees');
@@ -16,10 +17,12 @@ module.exports = {
     });
     return mergeTrees([emberCliVelocity, velocityAnimate]);
   },
+
   velocityOptions: function () {
     var env  = process.env.EMBER_ENV;
     return this.project.config(env).velocityOptions || {enabled: true, ui: false};
   },
+
   included: function included(app) {
     this._super.included.apply(this, arguments);
 
@@ -30,7 +33,7 @@ module.exports = {
 
     var options = this.velocityOptions();
 
-    if (options.enabled == false) {
+    if (options.enabled === false) {
       return;
     }
 
@@ -39,6 +42,6 @@ module.exports = {
       app.import('vendor/velocity-animate/velocity.ui.js');
     }
     app.import('vendor/ember-cli-velocity/velocity-promise-shim.js');
-
   }
+
 };

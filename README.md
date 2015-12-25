@@ -1,5 +1,7 @@
 # ember-cli-velocity [![Build Status](https://travis-ci.org/taras/ember-cli-velocity.svg)](https://travis-ci.org/taras/ember-cli-velocity)
 
+[![Build Status](https://travis-ci.org/EmberSherpa/ember-cli-velocity.svg)](https://travis-ci.org/EmberSherpa/ember-cli-velocity)
+
 Adds Velocity.js to application's vendor directory and imports Velocity for use in application. 
 This addon shims Promise with Ember.RSVP.Promise if the browser doesn't have native Promise support.
 
