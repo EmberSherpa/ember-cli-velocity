@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-velocity",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "EmberCLI Addon wrapper for Velocity.js",
   "directories": {
     "doc": "doc",
