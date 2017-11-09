@@ -5,6 +5,6 @@ module.exports = {
   normalizeEntityName: function() {},
 
   afterInstall: function() {
-    this.addPackageToProject('velocity-animate', '1.2.3');
+    return this.addPackageToProject('velocity-animate', '1.5.0');
   }
 };
